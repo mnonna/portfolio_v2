@@ -47,7 +47,39 @@
         </g>
       </svg>
     </div>
-    <div class="app-menu-overlay d-flex justify-content-center align-items-center" ref="overlay">
+    <div class="app-menu-overlay" ref="overlay">
+      <div class="app-menu-close d-flex justify-content-end align-items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30.707"
+          height="30.707"
+          viewBox="0 0 30.707 30.707"
+          @click="toggleMenu()"
+        >
+          <g id="Menu_close" transform="translate(-76.146 -49.146)">
+            <line
+              id="Line_4"
+              data-name="Line 4"
+              x2="30"
+              y2="30"
+              transform="translate(76.5 49.5)"
+              fill="none"
+              stroke="#b4e092"
+              stroke-width="1"
+            />
+            <line
+              id="Line_5"
+              data-name="Line 5"
+              x2="30"
+              y2="30"
+              transform="translate(106.5 49.5) rotate(90)"
+              fill="none"
+              stroke="#b4e092"
+              stroke-width="1"
+            />
+          </g>
+        </svg>
+      </div>
       <div class="app-menu-links d-flex flex-column justify-content-around align-items-center">
         <h1>mnonn@</h1>
         <a class="app-menu-links__single" href="#about">About</a>
@@ -102,7 +134,11 @@
     left: -2000px;
     opacity: 0;
     height: 100%;
-    background-color: rgba(34, 47, 62, 0.8);
+    background-color: rgba(34, 47, 62, 0.95);
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    justify-items: center;
+    align-items: center;
     @media screen and (min-width: 320px) {
       width: 100%;
     }
@@ -111,6 +147,27 @@
     }
     @media screen and (min-width: 1024px) {
       width: 40%;
+    }
+    .app-menu-close {
+      height: 100%;
+      width: 100%;
+      padding-right: 40px;
+      svg {
+        cursor: pointer;
+        @media screen and (min-width: 320px){
+          width: 30px;
+          height: 30px;
+        }
+        @media screen and (min-width: 768px){
+          width: 40px;
+          height: 40px;
+        }
+        &:hover{
+          g line{
+            stroke: white;
+          }
+        }
+      }
     }
     .app-menu-links {
       width: 30%;
@@ -160,7 +217,5 @@ export default {
       }
     }
   },
-
-  mounted() {}
 };
 </script>
