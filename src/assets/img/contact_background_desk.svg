@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1921" height="1001.044" viewBox="0 0 1921 1001.044">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e9defa"/>
+      <stop offset="1" stop-color="#fbfcdb"/>
+    </linearGradient>
+  </defs>
+  <path id="contact_background_desk" d="M0,3907.219l1920-164.252v1000H.016Z" transform="translate(0.5 -3742.423)" stroke="#707070" stroke-width="1" fill="url(#linear-gradient)"/>
+</svg>
