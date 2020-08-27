@@ -103,7 +103,7 @@
     #logo {
       margin: 0;
       padding: 0;
-      color: white;
+      color: #b4e092;
       @media screen and (min-width: 320px) {
         font-size: 24px;
       }
