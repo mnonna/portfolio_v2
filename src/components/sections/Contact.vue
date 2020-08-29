@@ -12,16 +12,27 @@
           v-on:submit.prevent
         >
           <div class="contact-form-input">
-            <input type="text" placeholder="E-mail" />
+            <input type="text" placeholder="E-mail" v-model="email"/>
+            <div class="input-error d-flex justify-content-center align-items-center" v-if="errorAlert.email != ''">
+              <span>{{errorAlert.email}}</span>
+            </div>
           </div>
           <div class="contact-form-input">
-            <input type="text" placeholder="Topic" />
+            <input type="text" placeholder="Topic" v-model="topic"/>
           </div>
           <div class="contact-form-input">
-            <textarea name id cols="30" rows="10" placeholder="Message"></textarea>
+            <textarea name id cols="30" rows="10" placeholder="Message" v-model="message"></textarea>
+            <div class="input-error d-flex justify-content-center align-items-center" v-if="errorAlert.message != ''">
+              <span>{{errorAlert.message}}</span>
+            </div>
           </div>
-          <button class="contact-send-message d-flex justify-content-center align-items-center">
+          <button
+            class="contact-send-message d-flex justify-content-around align-items-center"
+            @click="submitEmail()"
+            :disabled="sendingEmail"
+          >
             <span>Send message</span>
+            <b-spinner class="spinner" v-if="sendingEmail"></b-spinner>
           </button>
         </form>
       </b-col>
@@ -67,6 +78,17 @@
             height: 50px;
             border-radius: 30px;
           }
+          textarea{
+            resize: none;
+          }
+          .input-error{
+            width: 100%;
+            margin-bottom: 20px;
+            span{
+              color: white;
+              font-size: 14px;
+            }
+          }
         }
         .contact-send-message {
           outline: 0;
@@ -78,6 +100,10 @@
           &:hover {
             color: black;
             background-color: white;
+          }
+          .spinner{
+            width: 20px;
+            height: 20px;
           }
         }
       }
@@ -184,5 +210,43 @@
 </style>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      sendingEmail: false,
+      email: "",
+      topic: "",
+      message: "",
+      errorAlert: {
+        email: "",
+        message: ""
+      }
+    };
+  },
+
+  watch: {
+    email: function(email) {
+      let regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (!email.match(regex)) {
+        this.errorAlert.email = "Please enter valid email";
+      } else {
+        this.errorAlert.email = "";
+      }
+    },
+
+    message: function(message) {
+      if (message == "") {
+        this.errorAlert.message = "Message cannot be empty";
+      } else {
+        this.errorAlert.message = "";
+      }
+    }
+  },
+
+  methods: {
+    submitEmail: function() {
+      this.sendingEmail = !this.sendingEmail;
+    }
+  }
+};
 </script>
