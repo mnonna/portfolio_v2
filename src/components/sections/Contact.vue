@@ -29,7 +29,7 @@
           <button
             class="contact-send-message d-flex justify-content-around align-items-center"
             @click="submitEmail()"
-            :disabled="sendingEmail"
+            :disabled="sendingEmail || allowSend==false"
           >
             <span>Send message</span>
             <b-spinner class="spinner" v-if="sendingEmail"></b-spinner>
@@ -69,9 +69,18 @@
             margin-bottom: 20px;
             border: 1px solid #707070;
             text-align: center;
+            outline: 0;
             &::placeholder {
               color: #c43a30;
               font-weight: 500;
+            }
+            &:focus{
+              border: 1px solid white;
+              background-color: transparent;
+              color: white;
+              &::placeholder{
+                color: white;
+              }
             }
           }
           input {
@@ -100,6 +109,13 @@
           &:hover {
             color: black;
             background-color: white;
+          }
+          &:disabled{
+            background-image: linear-gradient(
+              180deg,
+                rgba(34, 47, 62, 0.9) 0%,
+                rgba(34, 47, 62, 0.9) 100%
+              );
           }
           .spinner{
             width: 20px;
@@ -210,6 +226,7 @@
 </style>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -220,7 +237,9 @@ export default {
       errorAlert: {
         email: "",
         message: ""
-      }
+      },
+      successMessage: "",
+      errorMessage: ""
     };
   },
 
@@ -243,9 +262,39 @@ export default {
     }
   },
 
+  computed: {
+    allowSend: function(){
+      let allow = false;
+      ((this.email == "" || this.errorAlert.email != "") || (this.errorAlert.message != "" || this.message == "")) ? allow = false : allow = true;
+
+      return allow;
+    }
+  },
+
   methods: {
-    submitEmail: function() {
+    submitEmail: async function() {
       this.sendingEmail = !this.sendingEmail;
+    
+      let data = {
+        from: this.email,
+        subject: this.topic,
+        message: this.message
+      };
+
+      await axios.post("http://localhost:5000/email", data).then(
+        (response) => {
+          this.successMessage = response.data.success;
+        }
+      ).catch(
+        (error) => {
+          this.errorMessage = error.response.error;
+        }
+      ).finally(
+        () => {
+          this.sendingEmail = !this.sendingEmail;
+        }
+      );
+
     }
   }
 };
