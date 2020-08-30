@@ -4,7 +4,7 @@
       <b-col class="about-heading d-flex justify-content-center align-items-center" xl="8">
         <b-row class="about-heading__wrapper d-flex justify-content-center align-items-center">
           <b-col class="about_profile d-flex flex-column align-items-center" xl="6">
-            <img id="profileImg" :src="require('../../assets/img/profile.jpg')" alt />
+            <img id="profileImg" :src="require('../../assets/img/profile.webp')" alt />
             <h1>Hello, my name is Marcin</h1>
             <p>
               The one who'll make
@@ -13,12 +13,12 @@
           </b-col>
           <b-col class="about-bio" sm="8" md="6" xl="6">
             <p>
-              I'm an frontend developer. I consider myself to be
-              self taught. Neitherless i got solid fundamentals of
-              frontend development which just might help you
-              with the website you want me to project.
-              My journey with front started about one year ago.
-              Apart from freelancing, i'm looking for a intern/job as an frontend
+              I'm an frontend developer.
+              My journey with coding websites started about one year ago.
+              By far I've learned all things by myself, e.g online courses
+              and doing my independent projects. Of course I don't want to
+              be complacent and I'm still going to learn new things.
+              I'm looking for a intern/job as an frontend
               dev. Feel free, check out my projects and contact me.
             </p>
           </b-col>
@@ -26,7 +26,7 @@
       </b-col>
       <b-col class="about-go-further d-flex justify-content-center align-items-center">
         <button id="aboutGoFurther" class="d-flex align-items-center justify-content-center">
-          <p>Go for more</p>
+          <a href="#projects">Go for more</a>
         </button>
       </b-col>
     </div>
@@ -151,9 +151,12 @@
       background-size: cover;
       position: relative;
       justify-self: flex-start;
-      p {
+      a {
         margin: 0;
         padding: 0;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
       }
       @media screen and (min-width: 320px) {
         height: 100px;
@@ -166,6 +169,12 @@
           outline: 0;
           border: 1px solid #2f3542;
           border-radius: 25px;
+          &:hover{
+            background-color: transparent;
+            a{
+              color: #c43a30;
+            }
+          }
         }
       }
       @media screen and (min-width: 1024px) {

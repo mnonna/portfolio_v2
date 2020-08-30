@@ -53,7 +53,7 @@
       rgba(34, 47, 62, 0.9) 0%,
       rgba(34, 47, 62, 0.9) 100%
     ),
-    url("../../assets/img/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg") no-repeat
+    url("../../assets/img/damian-zaleski-RYyr-k3Ysqg-unsplash.webp") no-repeat
       center center;
   background-size: cover;
   .contact-container__row {
