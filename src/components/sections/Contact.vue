@@ -281,7 +281,7 @@ export default {
         message: this.message
       };
 
-      await axios.post("http://localhost:5000/email", data).then(
+      await axios.post("/email", data).then(
         (response) => {
           this.successMessage = response.data.success;
         }
