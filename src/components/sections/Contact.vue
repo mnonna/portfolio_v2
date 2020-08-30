@@ -34,6 +34,12 @@
             <span>Send message</span>
             <b-spinner class="spinner" v-if="sendingEmail"></b-spinner>
           </button>
+          <div class="message-status d-flex justify-content-center align-items-center" v-if="successMessage != ''">
+            <span>{{ successMessage }}</span>
+          </div>
+          <div class="message-status d-flex justify-content-center align-items-center" v-if="errorMessage != ''">
+            <span>{{ errorMessage }}</span>
+          </div>
         </form>
       </b-col>
     </b-row>
@@ -60,7 +66,6 @@
       }
       .contact-form-main {
         width: 100%;
-        height: 500px;
         .contact-form-input {
           width: 250px;
           input,
@@ -120,6 +125,13 @@
           .spinner{
             width: 20px;
             height: 20px;
+          }
+        }
+        .message-status{
+          margin-top: 20px;
+          width: 100%;
+          span{
+            color: white;
           }
         }
       }

@@ -27,7 +27,7 @@ app.post("/email", (req,res) => {
         if(err){
             res.status(500).json({error: `Something went wrong. Try again. ${err}`});
         }else{
-            res.status(200).json({success: response});
+            res.status(200).json({success: "Message sent successfully"});
         }
     });
 })
