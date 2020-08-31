@@ -94,7 +94,7 @@
 <style lang="scss" scoped>
 .app-navbar {
   width: 100%;
-  height: 70px;
+  height: 80px;
   padding: 0;
   background-color: transparent;
   .navbar-brand {
@@ -104,6 +104,7 @@
       margin: 0;
       padding: 0;
       color: #b4e092;
+      font-family: 'Merienda One', cursive;
       @media screen and (min-width: 320px) {
         font-size: 24px;
       }
@@ -170,7 +171,7 @@
       }
     }
     .app-menu-links {
-      width: 30%;
+      width: 50%;
       height: 300px;
       h1 {
         color: #b4e092;
@@ -202,7 +203,6 @@ export default {
   methods: {
     toggleMenu: function() {
       const { overlay } = this.$refs;
-      console.log(overlay);
 
       this.overlay = !this.overlay;
 

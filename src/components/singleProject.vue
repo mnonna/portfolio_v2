@@ -23,47 +23,12 @@
 .single-project__wrapper {
   border-radius: 20px;
   padding-bottom: 20px;
-  background: rgb(135, 77, 162);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(135, 77, 162, 1) 0%,
-    rgba(196, 58, 48, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(135, 77, 162, 1) 0%,
-    rgba(196, 58, 48, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(135, 77, 162, 1) 0%,
-    rgba(196, 58, 48, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#874da2",endColorstr="#c43a30",GradientType=1);
-
-  &.portfolio {
-    background: rgb(0, 4, 40);
-    background: -moz-linear-gradient(
-      180deg,
-      rgba(0, 4, 40, 1) 0%,
-      rgba(0, 78, 146, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      180deg,
-      rgba(0, 4, 40, 1) 0%,
-      rgba(0, 78, 146, 1) 100%
-    );
-    background: linear-gradient(
-      180deg,
-      rgba(0, 4, 40, 1) 0%,
-      rgba(0, 78, 146, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000428",endColorstr="#004e92",GradientType=1);
-  }
+  background: #222831;
   @media screen and (min-width: 320px) {
     min-height: 500px;
     margin-bottom: 20px;
     .single-project__thumbnail {
+      padding: 5px;
       width: 200px;
       height: 120px;
       border-radius: 100px;

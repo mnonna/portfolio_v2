@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Montserrat&display=swap");
 html,
 body {
@@ -52,7 +53,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "Catamaran", sans-serif;
+    font-family: 'Merienda One', cursive;
   }
 
   .row {

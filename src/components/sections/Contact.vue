@@ -65,6 +65,7 @@
         text-align: center;
       }
       .contact-form-main {
+        margin-top: 20px;
         width: 100%;
         .contact-form-input {
           width: 250px;
