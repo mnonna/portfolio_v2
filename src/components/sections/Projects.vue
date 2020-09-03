@@ -251,7 +251,7 @@ export default {
       projects: [
         {
           id: 1,
-          url: require("../../assets/img/Image-1.webp"),
+          url: require("../../assets/img/noteify.jpg"),
           name: "Noteify App",
           desc: `Noteify is an music player app.
                 You can add your favourite songs
@@ -268,7 +268,7 @@ export default {
         },
         {
           id: 2,
-          url: require("../../assets/img/Image-2.webp"),
+          url: require("../../assets/img/ehc.jpg"),
           name: "EHC App",
           desc: `EHC is an hotel managment system app.
                 It distinguishes 5 user types - admin, receptionist,
@@ -283,7 +283,7 @@ export default {
         },
         {
           id: 3,
-          url: require("../../assets/img/Image-3.webp"),
+          url: require("../../assets/img/swisher.jpg"),
           name: "Swisher App",
           desc: `My first Vue.js app :). It's really simple.
                 It allows you to search informations
@@ -296,7 +296,7 @@ export default {
         },
         {
           id: 4,
-          url: require("../../assets/img/Image-4.webp"),
+          url: require("../../assets/img/portfolio.jpg"),
           name: "Portfolio",
           desc: `My portfolio website. Designed in Adobe XD
                 and coded in Vue.js framework with support of
